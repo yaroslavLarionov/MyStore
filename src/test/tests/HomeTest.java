@@ -1,11 +1,13 @@
 package tests;
 
 import base.BaseTest;
+
 import data.config.dataProviders.DataProviders;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import pages.HomePage;
 
 public class HomeTest extends BaseTest {
@@ -14,6 +16,7 @@ public class HomeTest extends BaseTest {
     @BeforeMethod
     public void localSetUp() {
         homePage = new HomePage(getDriver());
+
     }
 
     @Test(testName = "AUT-3 Footer - Information section",
@@ -43,3 +46,4 @@ public class HomeTest extends BaseTest {
         Assert.assertEquals(getDriver().getTitle(),"");
     }
 }
+
