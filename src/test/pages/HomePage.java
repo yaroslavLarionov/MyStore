@@ -23,6 +23,8 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "//a[@class='product-name' and @title='Faded Short Sleeve T-shirts']")
     public WebElement shirtItem;
 
+    public String expectedTotalPrice = "$" + (Math.round((16.51 + 26.00 + 2.00) * 100.0) / 100.0);
+
     @FindBy (xpath = "//a[@class='product-name' and @title='Printed Dress']")
     public WebElement dressItem;
 
@@ -32,18 +34,27 @@ public class HomePage extends BasePage {
     @FindBy (linkText = "Add to cart")
     public WebElement addToCart;
 
-    @FindBy (linkText = "Quick view")
-    public WebElement quickViewBtn;
+    @FindBy (xpath = "//div[@class='cart-info']//div[@class='product-name']//a[contains (@title, 'Faded')]")
+    public WebElement actualShirtItem;
 
-    @FindBy (xpath = "//a[@title='Close']")
-    public WebElement closeBtn;
+    @FindBy (xpath = "//div[@class='cart-info']//div[@class='product-name']//a[contains (@title, 'Printed Dress')]")
+    public WebElement actualDressItem;
 
-    @FindBy (xpath = "(//a[text()='T-shirts'])[2]")
-    public WebElement tshirtsSectionBtn;
+    @FindBy (xpath = "//a[@title='View my shopping cart']")
+    public WebElement cartBtn;
 
-    public String expectedShirtItemText = "Faded Short Sleeve T-shirts";
+    @FindBy (xpath = "//span[@class='price cart_block_total ajax_block_cart_total']")
+    public WebElement miniCartTotalPrice;
 
-    public String expectedDressItemText = "Printed Dress";
+    @FindBy (xpath = "//a[@title='Contact Us']")
+    public WebElement contactUsBtn;
+
+    @FindBy (linkText = "Sign in")
+    public WebElement signInBtn;
+
+
+
+
 
 
 

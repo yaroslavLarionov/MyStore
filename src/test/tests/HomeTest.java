@@ -1,6 +1,7 @@
 package tests;
 
 import base.BaseTest;
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import pages.AccountPage;
@@ -19,8 +20,8 @@ public class HomeTest extends BaseTest {
         seleniumUtils = new SeleniumUtils();
     }
 
-    @Test (testName = "AUT-1", description = "adding items to cart and verifying them")
-    public void test01() {
+    @Test (testName = "AUT-1", description = "adding items to cart and verifying them in mini cart")
+    public void miniCartTest() {
         //adding 1st item
         homePage.moveToMyElement(homePage.shirtItem);
         homePage.addToCart.click();
@@ -29,11 +30,11 @@ public class HomeTest extends BaseTest {
         homePage.moveToMyElement(homePage.dressItem);
         homePage.addToCart.click();
         homePage.click(homePage.continueShoppingBtn);
-        //checking mini cart info
+        //checking mini cart info if it matches
         homePage.moveToMyElement(homePage.viewCart);
-        System.out.println(homePage.shirtItem.getText());
-        System.out.println(homePage.dressItem.getText());
-
+        Assert.assertTrue(homePage.shirtItem.getText().equals(homePage.actualShirtItem.getAttribute("title")) &&
+                homePage.dressItem.getText().equals(homePage.actualDressItem.getAttribute("title")) &&
+                homePage.expectedTotalPrice.equals(homePage.miniCartTotalPrice.getText()));
     }
 
 
