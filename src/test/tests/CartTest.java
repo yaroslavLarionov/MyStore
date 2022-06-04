@@ -4,7 +4,7 @@ import base.BaseTest;
 import org.testng.annotations.BeforeMethod;
 import pages.HomePage;
 
-public class HomeTest extends BaseTest {
+public class CartTest extends BaseTest {
     HomePage homePage;
 
     @BeforeMethod
