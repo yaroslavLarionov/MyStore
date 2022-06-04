@@ -17,5 +17,9 @@ public class DataProviders {
         Object[] accountData = {"My orders", "My credit slips", "My addresses", "My personal info"};
         return accountData;
     }
-    //@DataProvider(name = "Authentication")
+    @DataProvider(name = "AuthenticationLogin")
+    public Object[] testAuthentication(){
+        Object[] loginPage ={"Login - My Store"};
+        return loginPage;
+    }
 }

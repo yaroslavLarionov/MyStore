@@ -6,17 +6,20 @@ import data.config.dataProviders.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
+import pages.AccountPage;
 import pages.HomePage;
 
 public class HomeTest extends BaseTest {
     HomePage homePage;
+    AccountPage accountPage;
+
 
     @BeforeMethod
     public void localSetUp() {
         homePage = new HomePage(getDriver());
+        accountPage = new AccountPage(getDriver());
 
     }
 
@@ -24,6 +27,7 @@ public class HomeTest extends BaseTest {
             description = "Information section should have following buttons",
             dataProvider = "info", dataProviderClass = DataProviders.class)
     public void testInfo(String info) {
+        getDriver().findElement(By.linkText(info)).click();
         Assert.assertTrue(getDriver().findElement(By.linkText(info)).isEnabled());
     }
 
@@ -31,27 +35,9 @@ public class HomeTest extends BaseTest {
             description = "My account section should have following options",
             dataProvider = "account", dataProviderClass = DataProviders.class)
     public void testAccount(String account) {
-        Assert.assertTrue(getDriver().findElement(By.linkText(account)).isEnabled());
+        getDriver().findElement(By.linkText(account)).click();
+        Assert.assertEquals(getDriver().getTitle(), accountPage.expectedTitle);
 
     }
-
-
-//    @Test(testName = "AUT-4 Footer - my account section",
-//            description = "All 4 links above will take user to Authentication page if user hasn't signed in yet")
-//    public void testAuthentication(String au) {
-//        String currentWindow = getDriver().getWindowHandle();
-//        homePage.myOrder.click();
-//        Assert.assertEquals(getDriver().getTitle(), "");
-//        getDriver().switchTo().window(currentWindow);
-//        homePage.myCreditSlips.click();
-//        Assert.assertEquals(getDriver().getTitle(),"");
-//        getDriver().switchTo().window(currentWindow);
-//        homePage.myAddresses.click();
-//        Assert.assertEquals(getDriver().getTitle(),"");
-//        getDriver().switchTo().window(currentWindow);
-//        homePage.myPersonalInfo.click();
-//        Assert.assertEquals(getDriver().getTitle(),"");
-//        getDriver().switchTo().window(currentWindow);
-//    }
 }
 
