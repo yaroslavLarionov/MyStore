@@ -17,5 +17,5 @@ public class DataProviders {
         Object[] accountData = {"My orders", "My credit slips", "My addresses", "My personal info"};
         return accountData;
     }
-
+    //@DataProvider(name = "Authentication")
 }
