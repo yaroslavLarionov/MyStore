@@ -1,12 +1,14 @@
 package tests;
 
 import base.BaseTest;
+
 import data.config.dataProviders.DataProviders;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import pages.HomePage;
 
 public class HomeTest extends BaseTest {
@@ -15,6 +17,7 @@ public class HomeTest extends BaseTest {
     @BeforeMethod
     public void localSetUp() {
         homePage = new HomePage(getDriver());
+
     }
 
     @Test(testName = "AUT-3 Footer - Information section",
@@ -31,6 +34,7 @@ public class HomeTest extends BaseTest {
         Assert.assertTrue(getDriver().findElement(By.linkText(account)).isEnabled());
 
     }
+
 
 //    @Test(testName = "AUT-4 Footer - my account section",
 //            description = "All 4 links above will take user to Authentication page if user hasn't signed in yet")
@@ -50,3 +54,4 @@ public class HomeTest extends BaseTest {
 //        getDriver().switchTo().window(currentWindow);
 //    }
 }
+
