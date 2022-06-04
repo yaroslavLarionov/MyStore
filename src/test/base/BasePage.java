@@ -3,6 +3,7 @@ package base;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -42,6 +43,12 @@ public class BasePage {
         moveIntoView(element);
         highlightElement(element);
         return element.getText();
+    }
+
+    public void moveToMyElement(WebElement element) {
+        waitForElementVisibility(element);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
     }
 
     public void waitForElementClickability(WebElement element){
