@@ -12,4 +12,6 @@ public class AccountPage extends BasePage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
+
+    public String expectedTitle = "Login - My Store";
 }
