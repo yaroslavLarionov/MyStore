@@ -64,6 +64,11 @@ public class BasePage {
     public void moveIntoView(WebElement element){
         ((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView(true);", element);
     }
+    public void moveToMyElement(WebElement element) {
+        waitForElementVisibility(element);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
+    }
 
     public void highlightElement(WebElement element){
         JavascriptExecutor js = (JavascriptExecutor) driver;
