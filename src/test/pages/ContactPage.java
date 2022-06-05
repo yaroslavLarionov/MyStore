@@ -43,7 +43,7 @@ public class ContactPage extends BasePage {
     public WebElement successMsg;
 
     public void fileUpload(WebDriver driver) {
-        String filePath = "C:\\Users\\yaril\\Desktop\\1.jpg";
+        String filePath = "src/test/data/uploadFile/notes.txt";
         WebElement uploadFileField = driver.findElement(By.xpath("//input[@id='fileUpload']"));
         uploadFileField.sendKeys(filePath);
     }
