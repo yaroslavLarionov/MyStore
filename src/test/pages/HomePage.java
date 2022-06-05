@@ -52,16 +52,15 @@ public class HomePage extends BasePage {
     @FindBy (linkText = "Sign in")
     public WebElement signInBtn;
 
-    @FindBy(xpath = "//a[@class='product-name' and @title='Faded Short Sleeve T-shirts']")
-    public WebElement shirtItem;
     @FindBy (xpath = "//a[@class='fancybox-item fancybox-close']")
     public WebElement closeBtn;
+
     @FindBy (linkText = "Quick view")
     public WebElement quickViewBtn;
-    @FindBy (xpath = "//a[@class='product-name' and @title='Printed Dress']")
-    public WebElement dressItem;
+
     @FindBy (xpath = "(//a[text()='T-shirts'])[2]")
     public WebElement tshirtsSectionBtn;
+
     public String expectedShirtItemText = "Faded Short Sleeve T-shirts";
 
     public String expectedDressItemText = "Printed Dress";
