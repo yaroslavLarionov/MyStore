@@ -10,12 +10,13 @@ import org.openqa.selenium.support.PageFactory;
 public class AccountPage extends BasePage {
     protected WebDriver driver;
 
-    public AccountPage(WebDriver driver){
+    public AccountPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
+<<<<<<< HEAD
     @FindBy (xpath = "//button[@id='SubmitCreate']")
     public WebElement createAccBtn;
 
@@ -72,5 +73,8 @@ public class AccountPage extends BasePage {
 
     @FindBy (linkText = "My account")
     public WebElement myAccountText;
+=======
+    public String expectedTitle = "Login - My Store";
+>>>>>>> d5977bd21c2b168ab06c8c81b1aa3860f6221fc0
 
 }
