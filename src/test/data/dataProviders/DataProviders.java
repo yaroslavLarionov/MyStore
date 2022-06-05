@@ -16,4 +16,12 @@ public class DataProviders {
         return  data;
     }
 
+    @DataProvider (name = "My account buttons")
+    public Object[] myAccountBtns() {
+        Object[] data = {"Orders", "My credit slips", "My addresses", "Information", "My wishlists"};
+        return  data;
+    }
+
+
+
 }
