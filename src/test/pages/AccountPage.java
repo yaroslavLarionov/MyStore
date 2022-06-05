@@ -16,4 +16,5 @@ public class AccountPage extends BasePage {
     }
 
     public String expectedTitle = "Login - My Store";
+
 }

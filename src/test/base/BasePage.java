@@ -45,6 +45,12 @@ public class BasePage {
         return element.getText();
     }
 
+    public void moveToMyElement(WebElement element) {
+        waitForElementVisibility(element);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
+    }
+
     public void waitForElementClickability(WebElement element){
         WebDriverWait wait = new WebDriverWait(driver, 10);
         wait.until(ExpectedConditions.elementToBeClickable(element));
